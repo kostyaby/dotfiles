@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR=~/.minimalist-packing
+DIR=$(pwd)
 FILES=".profile"\
 " .zshrc"\
 " .zlogin"\
