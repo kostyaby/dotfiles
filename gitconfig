@@ -1,0 +1,7 @@
+[user]
+  name = Kanstantsin Sokal
+  email = kostya.sokol.by@gmail.com
+[core]
+	editor = vim 
+[push]
+  default = simple

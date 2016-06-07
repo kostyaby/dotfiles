@@ -35,13 +35,41 @@ export LSCOLORS="Exfxcxdxbxegedabagacad"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-docker-machine start default >& /dev/null
-# Add default Docker configuration to the system variables
-eval "$(docker-machine env default)"
+setopt null_glob
 
-alias compile='/Users/kostya_by/Programming/contests/SGU/task999/compile'
+# Functions for competitive programming
+function compile() {
+  clang++ -O2 -Wl,-stack_size -Wl,0x10000000 -I/Users/kostya_by/Programming/git-repos/minimalist-survival-kit -DPENGUINS -x c++ -std=c++11 -o $1 $1.cpp
+}
 
+function test_one() {
+  echo "Testing $2"
+  echo "**********************"
+  ./$1 < $2
+  echo "**********************"
+}
+
+function test_many() {
+  for input_file in ${@:2}
+  do
+    test_one $1 $input_file
+  done
+}
+
+function test_all() {
+  for input_file in *.in
+  do
+    test_one $1 $input_file
+  done
+}
+
+# Alias for Distributed Code Jam
+alias dcj='/Users/kostya_by/Programming/contests/codejam/dcj/dcj.sh'
+
+# Enables Google Cloud CLI completion
 source '/Users/kostya_by/google-cloud-sdk/path.zsh.inc'
+source '/Users/kostya_by/google-cloud-sdk/completion.zsh.inc' 
 
-# The next line enables shell command completion for gcloud.
-source '/Users/kostya_by/google-cloud-sdk/completion.zsh.inc'
+# Makes RVM working
+export PATH="$PATH:$HOME/.rvm/bin"
+
