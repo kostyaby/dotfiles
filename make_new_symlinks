@@ -5,7 +5,8 @@ FILES="profile"\
 " zshrc"\
 " zlogin"\
 " gitconfig"\
-" vimrc"
+" vimrc"\
+" ycm_extra_conf.py"
 
 echo "Creating new symlinks in user's home folder..."
 
