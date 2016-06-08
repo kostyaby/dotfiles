@@ -39,7 +39,7 @@ setopt null_glob
 
 # Functions for competitive programming
 function compile() {
-  clang++ -O2 -Wl,-stack_size -Wl,0x10000000 -I/Users/kostya_by/Programming/git-repos/minimalist-survival-kit -DPENGUINS -x c++ -std=c++11 -o $1 $1.cpp
+  clang++ -O2 -Wl,-stack_size -Wl,0x10000000 -I/Users/kostya_by/Programming/git-repos/survival-kit -DPENGUINS -x c++ -std=c++11 -o $1 $1.cpp
 }
 
 function test_one() {

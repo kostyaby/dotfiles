@@ -25,7 +25,7 @@ flags = [
 '-O2',
 '-Wl,-stack_size',
 '-Wl,0x10000000', 
-'-I/Users/kostya_by/Programming/git-repos/minimalist-survival-kit', 
+'-I/Users/kostya_by/Programming/git-repos/survival-kit', 
 '-DPENGUINS', 
 '-x', 
 'c++',
