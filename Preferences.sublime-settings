@@ -6,7 +6,7 @@
 		"Vintage"
 	],
 	"tab_size": 2,
-    "rulers": [80],
+	"rulers": [80],
 	"theme": "Soda SolarizedDark.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
