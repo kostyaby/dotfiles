@@ -2,6 +2,6 @@
   name = Kanstantsin Sokal
   email = kostya.sokol.by@gmail.com
 [core]
-	editor = vim 
+	editor = subl
 [push]
   default = simple

@@ -1,19 +1,26 @@
 #!/usr/bin/env bash
 
 DIR=$(pwd)
+USER="kostya_by"
 FILES="profile"\
 " zshrc"\
 " zlogin"\
 " gitconfig"\
-" vimrc"\
-" ycm_extra_conf.py"
+" vimrc"
 
 echo "Creating new symlinks in user's home folder..."
 
-for file in $FILES; do
-  echo "Create a new symblink for "$file". "
-  rm -f ~/.$file
-  ln -s $DIR/$file ~/.$file
+for FILE in $FILES; do
+  echo "Create a new symblink for "$FILE". "
+  rm -f "$HOME/.$FILE"
+  ln -s "$DIR/$FILE" "$HOME/.$FILE"
   echo "Done."
 done
+
+SUBLIME_PREFERENCES_PATH="/Users/$USER/Library/Application Support/Sublime Text 3/Packages/User"
+SUBLIME_PREFERENCES_FILE="Preferences.sublime-settings"
+echo "Creating new symlink to Sublime preferences..."
+rm -f "$SUBLIME_PREFERENCES_PATH/$SUBLIME_PREFERENCES_FILE"
+ln -s "$DIR/$SUBLIME_PREFERENCES_FILE" "$SUBLIME_PREFERENCES_PATH/$SUBLIME_PREFERENCES_FILE"
+echo "Done."
 
