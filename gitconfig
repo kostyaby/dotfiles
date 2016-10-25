@@ -2,6 +2,10 @@
   name = Kanstantsin Sokal
   email = kostya.sokol.by@gmail.com
 [core]
-	editor = subl
+	editor = vim 
 [push]
   default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge --skip -- %f
+	required = true

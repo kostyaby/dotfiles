@@ -1,12 +1,21 @@
 {
+	"added_words":
+	[
+		"repo",
+		"namespace",
+		"cout",
+		"namespaces"
+	],
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"dictionary": "Packages/Language - English/en_US.dic",
 	"hide_minimap": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"rulers": [120],
 	"tab_size": 2,
-	"rulers": [80],
 	"theme": "Soda SolarizedDark.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"ensure_newline_at_eof_on_save": true,
 }

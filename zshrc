@@ -1,4 +1,4 @@
-export ZSH=/Users/kostya_by/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 CASE_SENSITIVE="false"
@@ -15,6 +15,8 @@ export PATH="/usr/local/bin"\
 ":/Users/kostya_by/.rvm/bin"\
 "/usr/local/opt/go/libexec/bin"
 
+export AIM_ROOT="/Users/kostya_by/Programming/aimatter/aim/"
+
 source $ZSH/oh-my-zsh.sh
 
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -26,7 +28,13 @@ setopt null_glob
 
 # Functions for competitive programming
 function compile() {
-  clang++ -O2 -Wl,-stack_size -Wl,0x10000000 -I/Users/kostya_by/Programming/git-repos/survival-kit -DPENGUINS -x c++ -std=c++11 -o $1 $1.cpp
+  clang++ -O2 -Wl,-stack_size -Wl,0x10000000 \
+          -I/Users/kostya_by/Programming/git-repos/survival-kit \
+          -lopencv_core -lopencv_imgproc -lopencv_highgui \
+          -lopencv_ml -lopencv_video -lopencv_features2d \
+          -lopencv_calib3d -lopencv_objdetect -lopencv_contrib \
+          -lopencv_legacy -lopencv_flann \
+          -DPENGUINS -x c++ -std=c++11 -o $1 $1.cpp
 }
 
 function test_one() {
@@ -49,14 +57,4 @@ function test_all() {
     test_one $1 $input_file
   done
 }
-
-# Alias for Distributed Code Jam
-alias dcj='/Users/kostya_by/Programming/contests/codejam/dcj/dcj.sh'
-
-# Enables Google Cloud CLI completion
-source '/Users/kostya_by/google-cloud-sdk/path.zsh.inc'
-source '/Users/kostya_by/google-cloud-sdk/completion.zsh.inc' 
-
-# Makes RVM working
-export PATH="$PATH:$HOME/.rvm/bin"
 
